@@ -105,9 +105,9 @@ I don't wanna write more and bore u so bye 😞🖐️
 </div>
 
 <div class="photos">
-    <img id="photo1" src="https://via.placeholder.com/150" alt="Photo 1">
-    <img id="photo2" src="https://via.placeholder.com/150" alt="Photo 2">
-    <img id="photo3" src="https://via.placeholder.com/150" alt="Photo 3">
+    <img id="photo1" src="https://drive.google.com/uc?export=view&id=1N4TX3cdo67_ADk3RkbKXgMaqMSbxd5qn" alt="Photo 1">
+    <img id="photo2" src="https://drive.google.com/uc?export=view&id=1nezwsvZi8vZi8bX_ZJ_P8AnRh6cBH6xu" alt="Photo 2">
+    <img id="photo3" src="https://drive.google.com/uc?export=view&id=1q7lbLNWdbbMH1YlosLyvbc2KbEY65l0o" alt="Photo 3">
 </div>
 
 <iframe src="https://open.spotify.com/embed/playlist/70uTz6qW8DzwpajBUWLd7E?utm_source=generator&autoplay=1" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -130,25 +130,6 @@ I don't wanna write more and bore u so bye 😞🖐️
 </div>
 
 <script>
-// Photo upload + lock
-document.querySelectorAll('.photos img').forEach(photo=>{
-  photo.addEventListener('click',()=>{
-    if(photo.dataset.locked==='true'){ alert("This photo is locked! Can't change it."); return; }
-    const input=document.createElement('input');
-    input.type='file'; input.accept='image/*';
-    input.onchange=e=>{
-      const file=e.target.files[0];
-      const reader=new FileReader();
-      reader.onload=()=>{
-        photo.src=reader.result;
-        photo.dataset.locked='true'; // lock permanently
-      };
-      reader.readAsDataURL(file);
-    };
-    input.click();
-  });
-});
-
 // Envelope toggle
 document.querySelectorAll('.envelope').forEach(env=>{
   env.addEventListener('click',()=>{
@@ -212,6 +193,18 @@ function triggerConfetti(x,y){
     setTimeout(()=>conf.remove(),800);
   }
 }
+
+// Auto fullscreen on load
+document.addEventListener('DOMContentLoaded', ()=>{
+  const goFull = () => {
+    const el = document.documentElement;
+    if (el.requestFullscreen) el.requestFullscreen();
+    else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+    else if (el.msRequestFullscreen) el.msRequestFullscreen();
+  };
+  setTimeout(goFull, 1500);
+  document.body.addEventListener('click', ()=>{ goFull(); }, { once:true });
+});
 </script>
 </body>
 </html>
