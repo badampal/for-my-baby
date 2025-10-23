@@ -1,290 +1,266 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>For My Dear Abuu Babyy — ur badam pal</title>
-  <style>
-    :root{
-      --bg:#0f0a0a;
-      --card:#1a0f12;
-      --accent:#b72b3a;
-      --accent-2:#c84b56;
-      --soft:#f7eceb;
-      --glass: rgba(255,255,255,0.04);
-      --glow: 0 8px 30px rgba(199,44,55,0.18);
-      font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Letter for Abuu</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #fce4ec, #ffe0b2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        overflow-x: hidden;
+        padding: 10px;
     }
-    *{box-sizing:border-box}
-    body{
-      margin:0; min-height:100vh; background: radial-gradient(1200px 700px at 10% 10%, rgba(200,60,75,0.08), transparent 10%), radial-gradient(800px 500px at 90% 90%, rgba(180,40,55,0.06), transparent 10%), linear-gradient(180deg,#0a0505 0%, #12060b 100%); color:var(--soft);
-      display:flex;align-items:center;justify-content:center;padding:40px;
+
+    header {
+        margin-top: 15px;
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: #d81b60;
+        text-align: center;
+        text-shadow: 1px 1px #fff5;
+        animation: fadeIn 2s ease-in-out;
     }
-    .wrap{width:980px;max-width:96%;display:grid;grid-template-columns:1fr 420px;gap:28px}
 
-    /* Left column (main card) */
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:18px;padding:28px;box-shadow: var(--glow);backdrop-filter: blur(6px);border:1px solid rgba(255,255,255,0.03)}
+    .letter {
+        max-width: 90%;
+        background: #ffffffcc;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 20px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #333;
+        animation: fadeInUp 1.5s ease-in-out;
+        white-space: pre-wrap;
+    }
 
-    header{display:flex;align-items:center;gap:16px}
-    .logo{width:72px;height:72px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:28px;box-shadow:0 10px 30px rgba(200,60,75,0.25);}
-    h1{margin:0;font-size:22px}
-    .sub{color:rgba(247,236,235,0.78);font-size:14px}
+    .photos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin: 15px 0;
+        animation: fadeIn 2s ease-in-out;
+    }
 
-    .section{margin-top:22px}
-    .letter{background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-    .letter p{margin:0 0 10px 0;line-height:1.5}
+    .photos img {
+        width: 30vw;
+        max-width: 150px;
+        height: 30vw;
+        max-height: 150px;
+        object-fit: cover;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
 
-    .photos{display:flex;gap:12px;margin-top:12px}
-    .photo{flex:1;height:120px;border-radius:12px;background:linear-gradient(180deg,#2b0f12,#2d0f13);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);position:relative;overflow:hidden}
-    .photo input{position:absolute;inset:0;opacity:0;cursor:pointer}
-    .photo img{width:100%;height:100%;object-fit:cover;display:block}
-    .photo .hint{padding:8px;text-align:center;font-size:13px}
+    .photos img:hover {
+        transform: scale(1.05);
+    }
 
-    .notes{display:flex;flex-direction:column;gap:10px;margin-top:12px}
-    .note{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);color:var(--soft);font-size:14px}
+    .notes {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 15px;
+        width: 90%;
+        animation: fadeIn 2s ease-in-out;
+    }
 
-    .spotify{margin-top:14px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.03)}
+    .note {
+        background: #f8bbd0;
+        padding: 8px;
+        border-radius: 10px;
+        text-align: center;
+        font-weight: 500;
+        color: #880e4f;
+        font-size: 0.95rem;
+    }
 
-    /* Right column */
-    .side{display:flex;flex-direction:column;gap:18px}
-    .panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.03)}
+    .scoreboard {
+        font-size: 1.3rem;
+        color: #d81b60;
+        margin-bottom: 10px;
+        animation: fadeIn 2s ease-in-out;
+    }
 
-    .game{height:360px;position:relative;overflow:hidden;border-radius:12px}
-    .hud{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-    .points{font-weight:700;font-size:18px}
-    .playbtn{background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;padding:8px 12px;border-radius:10px;color:white;font-weight:700;cursor:pointer}
+    .game-container {
+        position: relative;
+        width: 90%;
+        max-width: 300px;
+        height: 300px;
+        background: #ffe0b2;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        animation: fadeInUp 1.5s ease-in-out;
+    }
 
-    /* heart */
-    .heart{position:absolute;left:50%;top:-60px;font-size:28px;transform:translateX(-50%);pointer-events:auto}
+    .heart {
+        position: absolute;
+        font-size: 1.8rem;
+        cursor: pointer;
+        user-select: none;
+        transition: transform 0.2s;
+    }
 
-    /* falling animation created by JS */
+    .floating-heart {
+        position: fixed;
+        font-size: 1.5rem;
+        opacity: 0.7;
+        pointer-events: none;
+        animation: floatUp linear;
+    }
 
-    footer{margin-top:14px;text-align:center;color:rgba(247,236,235,0.6);font-size:13px}
+    @keyframes floatUp {
+        0% { transform: translateY(0) scale(1); opacity: 1; }
+        100% { transform: translateY(-800px) scale(0.5); opacity: 0; }
+    }
 
-    /* responsive */
-    @media(max-width:880px){.wrap{grid-template-columns:1fr;}.side{order:2}}
+    .confetti {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background: gold;
+        border-radius: 50%;
+        pointer-events: none;
+        animation: confettiFall 0.8s forwards;
+    }
 
-    /* small sparkle */
-    .sparkle{position:absolute;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.9);filter:blur(2px);opacity:0.8}
+    @keyframes confettiFall {
+        0% { transform: translate(0,0) rotate(0deg); opacity: 1; }
+        100% { transform: translate(var(--x,0px), 100px) rotate(360deg); opacity: 0; }
+    }
 
-    /* confetti for win */
-    .confetti{position:absolute;pointer-events:none;inset:0}
-
-  </style>
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeInUp { from { opacity:0; transform: translateY(30px); } to { opacity:1; transform: translateY(0); } }
+</style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="card">
-      <header>
-        <div class="logo">AB</div>
-        <div>
-          <h1>For My Dear Abuu Babyy</h1>
-          <div class="sub">Made with ❤️ by <strong>ur badam pal</strong> — Romantic & Elegant</div>
-        </div>
-      </header>
 
-      <div class="section">
-        <div class="letter">
-          <!-- Letter content (editable) -->
-          <p><strong>My dearest sweet lil babyboyy</strong></p>
-          <p>I don't even know where to start...I know I mess up sometimes...okayyyy....maybee a LOT OF TIMESSSS but please know I never mean to hurt you. You mean everything to me.</p>
-          <p>Everytime I think of u, I smile like a damn fool. You are my comfort, my favourite distraction and my motivation all wrapped in one.</p>
-          <p>I love the way you make everything feel lighter and stress-free, I love the way you make me laugh when all I wanna do is cry, I love the way you attentively listen to my endless yapping even when u r busy in watching reels and playing ff and most importantly, I love the way u love me...</p>
-          <p>I love you even when I'm mad, I love you when we fight, I love you when we don't talk or chat with each other, I JUST LOVE YOU SOOO MUCHHH</p>
-          <p>You r the only one who can make my heart calm and crazy at the same time. You are my favourite person to annoy, to laugh with, to daydream about. I don't say it usually but I'm really grateful for u. You made my life warmer just by being in it...I'm thankful the universe somehow decided to make you exist just for me 😔🥀</p>
-          <p>I don't know what the future holds for us but if I get to face it with u, I'll know I can face it all and I'll be okay.</p>
-          <p>I don't wanna write more and bore u so bye 😞🖐️</p>
-          <p style="margin-top:10px;text-align:right;opacity:0.95">— <em>ur badam pal</em></p>
-        </div>
-      </div>
+<header>For My Abuu Babyy 💖</header>
 
-      <div class="section">
-        <h3 style="margin:0 0 8px 0">🖼️ Some Special Moments</h3>
-        <div class="photos">
-          <label class="photo" id="p1"> <div class="hint">Click to upload photo 1</div><input type="file" accept="image/*" data-target="p1" /></label>
-          <label class="photo" id="p2"> <div class="hint">Click to upload photo 2</div><input type="file" accept="image/*" data-target="p2" /></label>
-          <label class="photo" id="p3"> <div class="hint">Click to upload photo 3</div><input type="file" accept="image/*" data-target="p3" /></label>
-        </div>
-        <div style="margin-top:8px;font-size:13px;color:rgba(247,236,235,0.6)">
-      </div>
+<div class="letter">
+My dearest sweet lil babyboyy
 
-      <div class="section">
-        <h3 style="margin:0 0 8px 0">💛 Little Notes From My Heart</h3>
-        <div class="notes">
-          <div class="note">If loving u was a crime, I'm ready for infinite death sentences.</div>
-          <div class="note">My charming boyy, I love the way u look at me.</div>
-          <div class="note">And, 😑 don't ignore me n watch too much reels and play when I wanna talk to u 😑😑😑😑😑</div>
-        </div>
-      </div>
+I don't even know where to start...I know I mess up sometimes...okayyyy....maybee a LOT OF TIMESSSS but please know I never mean to hurt you. You mean everything to me.
 
-      <div class="section">
-        <h3 style="margin:0 0 8px 0">🎶 Playlist For You</h3>
-        <div class="spotify">
-          <!-- Spotify embed (uses the playlist link you gave) -->
-          <iframe src="https://open.spotify.com/embed/playlist/70uTz6qW8DzwpajBUWLd7E" width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-        </div>
-      </div>
+Everytime I think of u, I smile like a damn fool. You are my comfort, my favourite distraction and my motivation all wrapped in one.
 
-     
-    </div>
+I love the way you make everything feel lighter and stress-free, I love the way you make me laugh when all I wanna do is cry, I love the way you attentively listen to my endless yapping even when u r busy in watching reels and playing ff and most importantly, I love the way u love me...
 
-    <!-- right column -->
-    <div class="side">
-      <div class="panel">
-        <div class="hud"><div><strong>Catch-the-Hearts</strong></div><div class="points">Score: <span id="score">0</span></div></div>
-        <div class="game" id="gameArea">
-          <!-- hearts will be appended here -->
-          <div class="confetti" id="confetti"></div>
-          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.06);font-size:48px">💘</div>
-        </div>
-        <div style="display:flex;gap:8px;margin-top:10px">
-          <button class="playbtn" id="startBtn">Start</button>
-          <button class="playbtn" id="pauseBtn">Pause</button>
-          <button class="playbtn" id="resetBtn">Reset</button>
-        </div>
-      </div>
+I love you even when I'm mad, I love you when we fight, I love you when we don't talk or chat with each other, I JUST LOVE YOU SOOO MUCHHH
 
-      <div class="panel">
-        <h3 style="margin:0 0 8px 0">Quick Tips</h3>
-        <ul style="margin:0;padding-left:18px;color:rgba(247,236,235,0.75)">
-          
-        </ul>
-      </div>
-    </div>
-  </div>
+You r the only one who can make my heart calm and crazy at the same time. You are my favourite person to annoy, to laugh with, to daydream about. I don't say it usually but I'm really grateful for u. I’m so glad fate (and your parents 😅) brought you into my life.
+
+I don't know what the future holds for us but if I get to face it with u, I'll know I can face it all and I'll be okay.
+
+I don't wanna write more and bore u so bye 😞🖐️
+</div>
+
+<div class="photos">
+    <img id="photo1" src="https://via.placeholder.com/150" alt="Photo 1">
+    <img id="photo2" src="https://via.placeholder.com/150" alt="Photo 2">
+    <img id="photo3" src="https://via.placeholder.com/150" alt="Photo 3">
+</div>
+
+<div class="notes">
+    <div class="note">“If loving u was a crime, I'm ready for infinite death sentences.”</div>
+    <div class="note">“My charming boyy, I love the way u look at me.”</div>
+    <div class="note">“And 😑 don’t ignore me n watch too much reels, play ff and watch dexter when I wanna talk to u 😑😑😑😑.”</div>
+</div>
+
+<div class="scoreboard">Score: <span id="score">0</span></div>
+<div class="game-container" id="gameContainer"></div>
+
+<audio id="bgMusic" src="your-spotify-or-mp3-link.mp3" autoplay loop></audio>
 
 <script>
-  // Photo uploads (client-side preview)
-  document.querySelectorAll('input[type=file]').forEach(inp => {
-    inp.addEventListener('change', e => {
-      const f = e.target.files[0];
-      if(!f) return;
-      const reader = new FileReader();
-      reader.onload = ev => {
-        const targetId = e.target.dataset.target;
-        const lbl = document.getElementById(targetId);
-        lbl.innerHTML = '<img src="'+ev.target.result+'" alt="photo">';
-        // allow re-upload
-        const newInput = document.createElement('input');
-        newInput.type='file'; newInput.accept='image/*'; newInput.dataset.target=targetId; newInput.style.position='absolute'; newInput.style.inset='0'; newInput.style.opacity=0; newInput.style.cursor='pointer';
-        newInput.addEventListener('change', arguments.callee);
-        lbl.appendChild(newInput);
-      };
-      reader.readAsDataURL(f);
+    // Photo upload
+    const photos = document.querySelectorAll('.photos img');
+    photos.forEach(photo => {
+        photo.addEventListener('click', () => {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = e => {
+                const file = e.target.files[0];
+                const reader = new FileReader();
+                reader.onload = () => { photo.src = reader.result; };
+                reader.readAsDataURL(file);
+            };
+            input.click();
+        });
     });
-  });
 
-  // Heart-catching game
-  const gameArea = document.getElementById('gameArea');
-  const scoreEl = document.getElementById('score');
-  const startBtn = document.getElementById('startBtn');
-  const pauseBtn = document.getElementById('pauseBtn');
-  const resetBtn = document.getElementById('resetBtn');
+    // Heart game
+    const gameContainer = document.getElementById('gameContainer');
+    const scoreEl = document.getElementById('score');
+    let score = 0;
 
-  let score = 0;
-  let running = false;
-  let spawnInterval = null;
-  const messages = [
-    "My sweet little heart 💘",
-    "Miss you already 😌",
-    "Best bf ever 😚",
-    "I love you 💝",
-    "More cuddles pls 🥺"
-    " My darling boyy"
-  ];
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.innerHTML = Math.random() < 0.1 ? '💛' : '❤️';
+        heart.style.left = Math.random() * (gameContainer.offsetWidth - 30) + 'px';
+        heart.style.top = '0px';
+        gameContainer.appendChild(heart);
 
-  function spawnHeart(){
-    const h = document.createElement('div');
-    h.className = 'heart';
-    const isGolden = Math.random() < 0.12;
-    h.innerText = isGolden ? '💖' : '💗';
-    const size = isGolden ? 36 : (20 + Math.random()*20);
-    h.style.fontSize = size+'px';
-    h.style.left = (Math.random()*90+5)+'%';
-    h.style.top = '-40px';
-    h.style.opacity = '1';
-    h.style.transition = 'transform 0.2s ease';
-    gameArea.appendChild(h);
+        const fall = setInterval(() => {
+            const top = parseInt(heart.style.top);
+            if(top > gameContainer.offsetHeight - 30) {
+                heart.remove();
+                clearInterval(fall);
+            } else {
+                heart.style.top = top + 2 + 'px';
+            }
+        }, 20);
 
-    // fall animation using requestAnimationFrame
-    let pos = -40;
-    const speed = 0.5 + Math.random()*1.2; // px per ms (approx)
-    const start = performance.now();
-    let raf;
-    function fall(now){
-      const elapsed = now - start;
-      pos = -40 + elapsed*0.08*speed; // tuned
-      h.style.top = pos + 'px';
-      // if out
-      if(pos < gameArea.clientHeight + 60){
-        raf = requestAnimationFrame(fall);
-      } else {
-        h.remove();
-      }
+        heart.addEventListener('click', () => {
+            score += heart.innerHTML === '💛' ? 5 : 1;
+            scoreEl.textContent = score;
+            if(heart.innerHTML === '💛') triggerConfetti(heart.offsetLeft + 10, heart.offsetTop + 10);
+            heart.remove();
+            clearInterval(fall);
+        });
     }
-    raf = requestAnimationFrame(fall);
 
-    h.addEventListener('click', function pop(e){
-      e.stopPropagation();
-      // score
-      const gained = isGolden ? 10 : 1;
-      score += gained;
-      scoreEl.innerText = score;
+    setInterval(createHeart, 800);
 
-      // float a small message
-      const msg = document.createElement('div');
-      msg.style.position='absolute'; msg.style.left=h.style.left; msg.style.top = (parseFloat(h.style.top)-20)+'px'; msg.style.transform='translateX(-50%)'; msg.style.fontSize='13px'; msg.style.pointerEvents='none';
-      msg.innerText = messages[Math.floor(Math.random()*messages.length)];
-      gameArea.appendChild(msg);
-      setTimeout(()=>msg.remove(),1200);
-
-      // pop effect
-      h.style.transform='scale(1.3)';
-      setTimeout(()=>{h.remove();},120);
-
-      // golden -> small confetti
-      if(isGolden){ burstConfettiAt(parseFloat(h.style.left)); }
-    });
-  }
-
-  function startGame(){
-    if(running) return; running=true; score=0; scoreEl.innerText=score;
-    spawnInterval = setInterval(spawnHeart, 700);
-  }
-  function pauseGame(){ running=false; clearInterval(spawnInterval); }
-  function resetGame(){ pauseGame(); score=0; scoreEl.innerText=score; // remove existing hearts
-    document.querySelectorAll('.heart').forEach(h=>h.remove());
-  }
-
-  startBtn.addEventListener('click', ()=>startGame());
-  pauseBtn.addEventListener('click', ()=>pauseGame());
-  resetBtn.addEventListener('click', ()=>resetGame());
-
-  // confetti helper
-  function burstConfettiAt(percentX){
-    const conf = document.getElementById('confetti');
-    const containerW = gameArea.clientWidth;
-    const x = (percentX/100) * containerW;
-    for(let i=0;i<12;i++){
-      const c = document.createElement('div');
-      c.style.position='absolute'; c.style.left=(x)+'px'; c.style.top='40%'; c.style.width='6px'; c.style.height='10px'; c.style.background=['#ffd1d6','#ffbfd0','#ff9aa2'][Math.floor(Math.random()*3)]; c.style.opacity=0.95; c.style.transform='rotate('+ (Math.random()*360)+'deg)'; c.style.borderRadius='2px';
-      conf.appendChild(c);
-      const dx = (Math.random()*140)-70; const dy = (Math.random()*-200)-40; const rot = (Math.random()*360);
-      c.animate([
-        {transform:`translate(0,0) rotate(0)`, opacity:1},
-        {transform:`translate(${dx}px, ${dy}px) rotate(${rot}deg)`, opacity:0}
-      ],{duration:900+Math.random()*700, easing:'cubic-bezier(.2,.7,.2,1)'});
-      setTimeout(()=>c.remove(),1300);
+    // Floating hearts
+    function floatHeart() {
+        const heart = document.createElement('div');
+        heart.classList.add('floating-heart');
+        heart.innerHTML = '❤️';
+        heart.style.left = Math.random() * window.innerWidth + 'px';
+        heart.style.animationDuration = (5 + Math.random() * 5) + 's';
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 10000);
     }
-  }
 
-  // small sparkle generator for ambience
-  setInterval(()=>{
-    const s = document.createElement('div'); s.className='sparkle';
-    s.style.left=(Math.random()*100)+'%'; s.style.top=(Math.random()*100)+'%'; s.style.opacity=Math.random(); document.body.appendChild(s);
-    setTimeout(()=>s.remove(),1200+Math.random()*1800);
-  },400);
+    setInterval(floatHeart, 500);
 
+    // Confetti for golden hearts
+    function triggerConfetti(x, y) {
+        for(let i=0;i<15;i++){
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            confetti.style.left = x + 'px';
+            confetti.style.top = y + 'px';
+            confetti.style.setProperty('--x', (Math.random()*100-50)+'px');
+            document.body.appendChild(confetti);
+            setTimeout(() => confetti.remove(), 800);
+        }
+    }
 </script>
+
 </body>
 </html>
